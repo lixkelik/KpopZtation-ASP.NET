@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Customer.master.cs" Inherits="KpopZtation.View.Master.Customer" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style2 {
+            width: 200px;
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0">
+    <form id="form1" runat="server">
+        <div>
+            <table style="border-collapse:collapse; width:100%;">
+                <tr style="background-color:darkblue; height:50px">
+                    <td style="width: 70px; text-align:center">
+                        <asp:Label ID="kpopZtation" runat="server" Text="KpopZtation" Font-Bold="True" Font-Names="Poetsen One" Font-Size="Larger" ForeColor="White"></asp:Label>
+                    </td>
+                    <td class="auto-style2">
+                        <asp:Menu ID="Menu1" runat="server" Font-Bold="True" Font-Names="Arial" ForeColor="White" Orientation="Horizontal">
+                            <Items>
+                                <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/View/home.aspx"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/View/cart.aspx" Text="Cart" Value="Cart"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/View/transaction.aspx" Text="Transaction" Value="Transaction"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/View/update_profile.aspx" Text="Update Profile" Value="Update Profile"></asp:MenuItem>
+                            </Items>
+                            <StaticHoverStyle ForeColor="Yellow" />
+                        </asp:Menu>
+                    </td>
+                    <td style="text-align:right; width:60%; padding-right:30px">
+                        <asp:Button ID="logoutBtn" runat="server" Text="Logout" BorderStyle="None" Font-Bold="True" Font-Names="Arial" BackColor="DarkBlue" ForeColor="White" OnClick="logoutBtn_Click"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        &copy; 2023 - KpopZtation
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

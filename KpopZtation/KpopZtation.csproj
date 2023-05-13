@@ -98,9 +98,6 @@
     <Content Include="Assets\Artists\638057899497035774.jfif" />
     <Content Include="Assets\Artists\638057900448119533.jfif" />
     <Content Include="Assets\Artists\638058485179546128.jfif" />
-    <Content Include="Assets\Artists\638058486287141139.jfif" />
-    <Content Include="Assets\Artists\638058489004609070.jfif" />
-    <Content Include="Assets\Artists\638058554486609538.jfif" />
     <Content Include="Assets\Artists\638059446432559006.jfif" />
     <Content Include="Assets\Artists\638059447901481658.jfif" />
     <Content Include="Assets\Artists\638059450808002463.jfif" />
@@ -114,10 +111,20 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
-    <Content Include="View\Login.aspx" />
+    <Content Include="View\ArtistFolder\edit_artist.aspx" />
+    <Content Include="View\Authentication\Login.aspx" />
+    <Content Include="View\Authentication\Register.aspx" />
+    <Content Include="View\home.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\ArtistController.cs" />
+    <Compile Include="Controller\AuthController.cs" />
+    <Compile Include="Factory\AlbumFactory.cs" />
+    <Compile Include="Factory\ArtistFactory.cs" />
+    <Compile Include="Factory\CustomerFactory.cs" />
+    <Compile Include="Handler\ArtistHandler.cs" />
+    <Compile Include="Handler\UserHandler.cs" />
     <Compile Include="Model\Album.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -152,28 +159,58 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AlbumRepo.cs" />
+    <Compile Include="Repository\ArtistRepo.cs" />
     <Compile Include="Repository\CustomerRepo.cs" />
     <Compile Include="Repository\Database.cs" />
-    <Compile Include="View\Login.aspx.cs">
+    <Compile Include="View\ArtistFolder\edit_artist.aspx.cs">
+      <DependentUpon>edit_artist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ArtistFolder\edit_artist.aspx.designer.cs">
+      <DependentUpon>edit_artist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Authentication\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Login.aspx.designer.cs">
+    <Compile Include="View\Authentication\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Master\Authorized.Master.cs">
-      <DependentUpon>Authorized.Master</DependentUpon>
+    <Compile Include="View\Authentication\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Master\Authorized.Master.designer.cs">
-      <DependentUpon>Authorized.Master</DependentUpon>
+    <Compile Include="View\Authentication\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Master\Unauthorized.Master.cs">
-      <DependentUpon>Unauthorized.Master</DependentUpon>
+    <Compile Include="View\home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Master\Unauthorized.Master.designer.cs">
-      <DependentUpon>Unauthorized.Master</DependentUpon>
+    <Compile Include="View\home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Master\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master\Customer.Master.cs">
+      <DependentUpon>Customer.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Master\Customer.Master.designer.cs">
+      <DependentUpon>Customer.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master\Guest.Master.cs">
+      <DependentUpon>Guest.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Master\Guest.Master.designer.cs">
+      <DependentUpon>Guest.Master</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -185,8 +222,9 @@
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
-    <Content Include="View\Master\Authorized.Master" />
-    <Content Include="View\Master\Unauthorized.Master" />
+    <Content Include="View\Master\Admin.Master" />
+    <Content Include="View\Master\Customer.Master" />
+    <Content Include="View\Master\Guest.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -194,11 +232,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\" />
-    <Folder Include="Factory\" />
-    <Folder Include="Handler\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

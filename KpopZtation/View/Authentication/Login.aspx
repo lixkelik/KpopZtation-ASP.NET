@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Master/Unauthorized.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="KpopZtation.View.Login" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Master/Guest.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="KpopZtation.View.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -15,6 +15,6 @@
     </div>
     <div>
         <asp:Button ID="loginBtn" runat="server" Text="Login" OnClick="loginBtn_Click"/>
-        <asp:Label ID="errorLbl" runat="server" Text=""></asp:Label>
+        <asp:Label ID="errorLbl" runat="server" ForeColor="#CC0000" ></asp:Label>
     </div>
 </asp:Content>

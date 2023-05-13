@@ -7,9 +7,14 @@ using System.Web.UI.WebControls;
 
 namespace KpopZtation.View.Master
 {
-    public partial class Unauthorized : System.Web.UI.MasterPage
+    public partial class Customer : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void logoutBtn_Click(object sender, EventArgs e)
         {
 
         }
