@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KpopZtation.View
+namespace KpopZtation.View.Master
 {
 
 

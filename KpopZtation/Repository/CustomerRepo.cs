@@ -26,6 +26,12 @@ namespace KpopZtation.Repository
             return true;
         }
 
+        public Customer GetCustomerById(int id)
+        {
+            Customer cust = (from c in db.Customers where c.CustomerID == id select c).ToList().FirstOrDefault();
+            return cust;
+        }
+
         public void RegisterUser(String name, String email, String gender, String address, String password)
         {
             string role = "Cust";

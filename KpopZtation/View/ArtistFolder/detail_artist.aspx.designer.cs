@@ -11,80 +11,71 @@ namespace KpopZtation.View.ArtistFolder
 {
 
 
-    public partial class edit_artist
+    public partial class detail_artist
     {
 
         /// <summary>
-        /// pageLbl control.
+        /// titleLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label pageLbl;
+        protected global::System.Web.UI.WebControls.Label titleLbl;
 
         /// <summary>
-        /// artistNameLbl control.
+        /// artistImg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label artistNameLbl;
+        protected global::System.Web.UI.WebControls.Image artistImg;
 
         /// <summary>
-        /// nameTbx control.
+        /// artistName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nameTbx;
+        protected global::System.Web.UI.WebControls.Label artistName;
 
         /// <summary>
-        /// artistImage control.
+        /// insertLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image artistImage;
+        protected global::System.Web.UI.WebControls.Label insertLbl;
 
         /// <summary>
-        /// artistImageLbl control.
+        /// insertBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label artistImageLbl;
+        protected global::System.Web.UI.WebControls.Button insertBtn;
 
         /// <summary>
-        /// imageUpload control.
+        /// albumLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload imageUpload;
+        protected global::System.Web.UI.WebControls.Label albumLbl;
 
         /// <summary>
-        /// imageErrorLbl control.
+        /// albumGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label imageErrorLbl;
-
-        /// <summary>
-        /// updateBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button updateBtn;
+        protected global::System.Web.UI.WebControls.GridView albumGrid;
 
         /// <summary>
         /// errorLbl control.

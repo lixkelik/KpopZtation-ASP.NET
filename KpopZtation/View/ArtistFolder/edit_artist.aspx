@@ -7,10 +7,10 @@
     </div>
     <div>
         <asp:Label ID="artistNameLbl" runat="server" Text="Artist Name"></asp:Label>
-        <asp:TextBox ID="nameLbl" runat="server"></asp:TextBox>
+        <asp:TextBox ID="nameTbx" runat="server"></asp:TextBox>
     </div>
     <div>
-        <asp:Image ID="artistImage" runat="server" Height="70" Width="70" />
+        <asp:Image ID="artistImage" runat="server" Height="150" Width="150" />
     </div>
     <div>
         <asp:Label ID="artistImageLbl" runat="server" Text="Artist Image"></asp:Label>

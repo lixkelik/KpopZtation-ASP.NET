@@ -1,5 +1,4 @@
 ﻿using KpopZtation.Controller;
-using KpopZtation.Handler;
 using KpopZtation.Model;
 using KpopZtation.Repository;
 using System;
@@ -11,8 +10,9 @@ using System.Web.UI.WebControls;
 
 namespace KpopZtation.View.ArtistFolder
 {
-    public partial class edit_artist : System.Web.UI.Page
+    public partial class insert_artist : System.Web.UI.Page
     {
+
         ArtistController artistController = new ArtistController();
         FileUploadController fileController = new FileUploadController();
 
@@ -38,35 +38,23 @@ namespace KpopZtation.View.ArtistFolder
                     cust = (Customer)Session["user"];
                 }
 
-                if(cust.CustomerRole == "admin") MasterPageFile = "~/View/Master/Admin.Master";
+                if (cust.CustomerRole == "admin") MasterPageFile = "~/View/Master/Admin.Master";
                 else Response.Redirect("~/View/home.aspx");
             }
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request["ID"] == null)
-            {
-                Response.Redirect("~/View/home.aspx");
-            }
-            int id = int.Parse(Request["ID"]);
-            ArtistHandler artistHandler = new ArtistHandler();
-            if (!IsPostBack)
-            {
-                Artist artist = artistHandler.GetArtistById(id);
 
-                nameTbx.Text = artist.ArtistName;
-                artistImage.ImageUrl = artist.ArtistImage;
-            }
         }
 
-        protected void updateBtn_Click(object sender, EventArgs e)
+        protected void insertBtn_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(Request["ID"]);
             string name = nameTbx.Text.Trim();
-            string image = artistImage.ImageUrl;
+            string image = "";
 
             string response = "";
+
             if (imageUpload.HasFile)
             {
                 string fileExtension = System.IO.Path.GetExtension(imageUpload.FileName);
@@ -75,27 +63,26 @@ namespace KpopZtation.View.ArtistFolder
                 response = fileController.IsFileValid(fileExtension, fileSize);
             }
 
-            if(response == "")
+            if (response == "")
             {
                 if (imageUpload.HasFile)
                 {
                     imageUpload.SaveAs(Server.MapPath("~/Assets/Artists/" + imageUpload.FileName));
                     image = "~/Assets/Artists/" + imageUpload.FileName;
+                    response = artistController.CheckInsertArtist(name, image);
 
-                    artistImage.ImageUrl = image;
+                    if (response == "success") Response.Redirect("~/View/home.aspx");
+                    else errorLbl.Text = response;
                 }
-
-                response = artistController.CheckUpdateArtist(id, name, image);
-
-                if (response == "success") Response.Redirect("~/View/home.aspx");
-                else errorLbl.Text = response;
-                
+                else
+                {
+                    errorLbl.Text = "Please upload your file first!";
+                }
             }
             else
             {
-                imageErrorLbl.Text = response;
+                errorLbl.Text = response;
             }
-            
         }
     }
 }

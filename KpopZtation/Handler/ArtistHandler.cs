@@ -33,10 +33,22 @@ namespace KpopZtation.Handler
         {
             Artist artist = artRepo.FindArtistByName(artistName);
 
-            if (artist != null) return "Artist name duplicated! Input unique name!";
+            if (artist != null) return "duplicate";
 
             // status > 0 == success, status == 0 failed
             int status = artRepo.UpdateArtist(artistId, artistName, imageUrl);
+            if (status > 0) return "success";
+            else return "failed";
+        }
+
+        public String InsertArtist(string artistName, string imageUrl)
+        {
+            Artist artist = artRepo.FindArtistByName(artistName);
+
+            if (artist != null) return "duplicate";
+
+            // status > 0 == success, status == 0 failed
+            int status = artRepo.InsertArtist(artistName, imageUrl);
             if (status > 0) return "success";
             else return "failed";
         }

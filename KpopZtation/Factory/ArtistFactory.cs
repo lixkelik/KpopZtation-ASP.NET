@@ -8,10 +8,9 @@ namespace KpopZtation.Factory
 {
     public class ArtistFactory
     {
-        public static Artist createArtist(int artistID, string artistName, string artistImage)
+        public static Artist createArtist(string artistName, string artistImage)
         {
             Artist artist = new Artist();
-            artist.ArtistID = artistID;
             artist.ArtistName = artistName;
             artist.ArtistImage = artistImage;
 

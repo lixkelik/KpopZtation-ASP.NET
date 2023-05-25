@@ -14,18 +14,33 @@ namespace KpopZtation.View
     public partial class home : System.Web.UI.Page
     {
         ArtistHandler artistHandler = new ArtistHandler();
-
+        CustomerRepo custRepo = new CustomerRepo();
+        Customer cust;
         protected void Page_PreInit(object sender, EventArgs e)
         {
-            if (Session["user"] == null)
+            if (Session["user"] == null && Request.Cookies["user_cookie"] == null)
             {
-                MasterPageFile = "~/View/Master/Guest.Master";
+                MasterPageFile = "~/View/Master/Guest.Master"; ;
             }
             else
             {
-                Customer cust = (Customer)Session["user"];
-                if (cust.CustomerRole == "Cust") MasterPageFile = "~/View/Master/Customer.Master";
-                else MasterPageFile = "~/View/Master/Admin.Master";
+                
+                if (Session["user"] == null)
+                {
+                    int id = int.Parse(Request.Cookies["user_cookie"].Value);
+                    cust = custRepo.GetCustomerById(id);
+                    Session["user"] = cust;
+                }
+                else
+                {
+                    cust = (Customer)Session["user"];
+                }
+
+                if (cust.CustomerRole == "admin")
+                {
+                    MasterPageFile = "~/View/Master/Admin.Master";
+                }
+                else MasterPageFile = "~/View/Master/Customer.Master";
             }
         }
 
@@ -33,6 +48,19 @@ namespace KpopZtation.View
         {
             if (!IsPostBack)
             {
+                
+                if (cust != null )
+                {
+                    welcomeLbl.Text = $"Hello, {cust.CustomerName}! Welcome to KpopZtation";
+                    if(cust.CustomerRole == "admin")
+                    {
+                        insertBtn.Visible = true;
+                        insertLbl.Visible = true;
+                    }
+                }else
+                {
+                    welcomeLbl.Text = "Welcome to KpopZtation";
+                }
                 DataRebinding();
             }
             
@@ -48,7 +76,7 @@ namespace KpopZtation.View
         protected void artistGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             GridViewRow row = artistGridView.Rows[e.RowIndex];
-            int id = int.Parse(row.Cells[0].Text);
+            int id = int.Parse(row.Cells[1].Text);
             artistHandler.DeleteArtist(id);
 
             DataRebinding();
@@ -58,21 +86,20 @@ namespace KpopZtation.View
         {
             GridViewRow row = artistGridView.Rows[e.NewEditIndex];
 
-            int id = int.Parse(row.Cells[0].Text);
-            Response.Redirect("~/View/edit_artist.aspx?ID=" + id);
+            int id = int.Parse(row.Cells[1].Text);
+            Response.Redirect("~/View/ArtistFolder/edit_artist.aspx?ID=" + id);
         }
 
         protected void artistGridView_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = artistGridView.SelectedRow;
 
-            int id = int.Parse(row.Cells[0].Text);
-            Response.Redirect("~/View/view_artist.aspx?ID=" + id);
+            int id = int.Parse(row.Cells[1].Text);
+            Response.Redirect("~/View/ArtistFolder/detail_artist.aspx?ID=" + id);
         }
 
         protected void artistGridView_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            Customer cust = (Customer)Session["user"];
             if(cust == null || cust.CustomerRole == "Cust")
             {
                 e.Row.Cells[4].Visible = false;
@@ -82,6 +109,11 @@ namespace KpopZtation.View
                 e.Row.Cells[4].Visible = true;
             }
             
+        }
+
+        protected void insertBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/ArtistFolder/insert_artist.aspx");
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using KpopZtation.Model;
+﻿using KpopZtation.Factory;
+using KpopZtation.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,14 @@ namespace KpopZtation.Repository
         public List<Artist> GetAllArtist()
         {
             return (from a in db.Artists select a).ToList();
+        }
+
+        public int InsertArtist(string name, string imageUrl)
+        {
+            Artist artist = ArtistFactory.createArtist(name, imageUrl);
+            db.Artists.Add(artist);
+
+            return db.SaveChanges();
         }
 
         public int UpdateArtist(int id, String name, String image)

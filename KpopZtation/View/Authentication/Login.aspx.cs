@@ -13,6 +13,36 @@ namespace KpopZtation.View
     public partial class Login : System.Web.UI.Page
     {
         AuthController authController = new AuthController();
+
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            CustomerRepo custRepo = new CustomerRepo();
+
+            if (Session["user"] == null && Request.Cookies["user_cookie"] == null)
+            {
+                MasterPageFile = "~/View/Master/Guest.Master"; ;
+            }
+            else
+            {
+                Customer cust;
+                if (Session["user"] == null)
+                {
+                    int id = int.Parse(Request.Cookies["user_cookie"].Value);
+                    cust = custRepo.GetCustomerById(id);
+                    Session["user"] = cust;
+                }
+                else
+                {
+                    cust = (Customer)Session["user"];
+                }
+
+                if (cust.CustomerRole == "admin") MasterPageFile = "~/View/Master/Admin.Master";
+                else MasterPageFile = "~/View/Master/Customer.Master";
+
+                Response.Redirect("~/View/home.aspx");
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 

@@ -10,25 +10,34 @@ namespace KpopZtation.Controller
     public class ArtistController
     {
         ArtistHandler artistHandler = new ArtistHandler();
-        public String IsFileValid(String ext, int fileSize)
-        {
-            if (ext != ".png" && ext != ".jpg" && ext != ".jpeg" && ext != ".jfif" ) return "Image extension is not correct!";
-            if (fileSize > 2097152) return "Image must be < 2 MB";
-            return "";
-        }   
 
-        public String CheckUpdateArtist(int id, String name, String imageUrl)
+        public String CheckUpdateArtist(int id, string name, string imageUrl)
         {
             if(name == null || name == "")
             {
                 return "Artist name must be filled!";
             }
 
-            String response = artistHandler.UpdateArtist(id, name, imageUrl);
+            string response = artistHandler.UpdateArtist(id, name, imageUrl);
 
+            return CheckReturnString(response);
+
+        }
+
+        public String CheckInsertArtist(string name, string imageUrl)
+        {
+            if (name == null || name == "") return "Artist name must be filled!";
+
+            string response = artistHandler.InsertArtist(name, imageUrl);
+
+            return CheckReturnString(response);
+        }
+
+        public String CheckReturnString(string response)
+        {
             if (response == "success") return "success";
-            else return "Failed to update, please try again!";
-
+            else if (response == "duplicate") return "Artist name duplicated! Input unique name!";
+            else return "Failed, please try again!";
         }
     }
 }

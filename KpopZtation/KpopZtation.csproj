@@ -111,18 +111,25 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Content Include="View\AlbumFolder\edit_album.aspx" />
+    <Content Include="View\AlbumFolder\insert_album.aspx" />
+    <Content Include="View\ArtistFolder\detail_artist.aspx" />
     <Content Include="View\ArtistFolder\edit_artist.aspx" />
+    <Content Include="View\ArtistFolder\insert_artist.aspx" />
     <Content Include="View\Authentication\Login.aspx" />
     <Content Include="View\Authentication\Register.aspx" />
     <Content Include="View\home.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\AlbumController.cs" />
     <Compile Include="Controller\ArtistController.cs" />
     <Compile Include="Controller\AuthController.cs" />
+    <Compile Include="Controller\FileUploadController.cs" />
     <Compile Include="Factory\AlbumFactory.cs" />
     <Compile Include="Factory\ArtistFactory.cs" />
     <Compile Include="Factory\CustomerFactory.cs" />
+    <Compile Include="Handler\AlbumHandler.cs" />
     <Compile Include="Handler\ArtistHandler.cs" />
     <Compile Include="Handler\UserHandler.cs" />
     <Compile Include="Model\Album.cs">
@@ -163,12 +170,40 @@
     <Compile Include="Repository\ArtistRepo.cs" />
     <Compile Include="Repository\CustomerRepo.cs" />
     <Compile Include="Repository\Database.cs" />
+    <Compile Include="View\AlbumFolder\edit_album.aspx.cs">
+      <DependentUpon>edit_album.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\AlbumFolder\edit_album.aspx.designer.cs">
+      <DependentUpon>edit_album.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\AlbumFolder\insert_album.aspx.cs">
+      <DependentUpon>insert_album.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\AlbumFolder\insert_album.aspx.designer.cs">
+      <DependentUpon>insert_album.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ArtistFolder\detail_artist.aspx.cs">
+      <DependentUpon>detail_artist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ArtistFolder\detail_artist.aspx.designer.cs">
+      <DependentUpon>detail_artist.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\ArtistFolder\edit_artist.aspx.cs">
       <DependentUpon>edit_artist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\ArtistFolder\edit_artist.aspx.designer.cs">
       <DependentUpon>edit_artist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ArtistFolder\insert_artist.aspx.cs">
+      <DependentUpon>insert_artist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ArtistFolder\insert_artist.aspx.designer.cs">
+      <DependentUpon>insert_artist.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Authentication\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

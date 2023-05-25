@@ -11,26 +11,17 @@ namespace KpopZtation.View.ArtistFolder
 {
 
 
-    public partial class edit_artist
+    public partial class insert_artist
     {
 
         /// <summary>
-        /// pageLbl control.
+        /// nameLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label pageLbl;
-
-        /// <summary>
-        /// artistNameLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label artistNameLbl;
+        protected global::System.Web.UI.WebControls.Label nameLbl;
 
         /// <summary>
         /// nameTbx control.
@@ -42,22 +33,13 @@ namespace KpopZtation.View.ArtistFolder
         protected global::System.Web.UI.WebControls.TextBox nameTbx;
 
         /// <summary>
-        /// artistImage control.
+        /// imageLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image artistImage;
-
-        /// <summary>
-        /// artistImageLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label artistImageLbl;
+        protected global::System.Web.UI.WebControls.Label imageLbl;
 
         /// <summary>
         /// imageUpload control.
@@ -69,22 +51,13 @@ namespace KpopZtation.View.ArtistFolder
         protected global::System.Web.UI.WebControls.FileUpload imageUpload;
 
         /// <summary>
-        /// imageErrorLbl control.
+        /// insertBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label imageErrorLbl;
-
-        /// <summary>
-        /// updateBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button updateBtn;
+        protected global::System.Web.UI.WebControls.Button insertBtn;
 
         /// <summary>
         /// errorLbl control.

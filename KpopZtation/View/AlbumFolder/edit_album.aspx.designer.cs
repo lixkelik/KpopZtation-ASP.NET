@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KpopZtation.View.ArtistFolder
+namespace KpopZtation.View.AlbumFolder
 {
 
 
-    public partial class edit_artist
+    public partial class edit_album
     {
 
         /// <summary>
@@ -24,13 +24,13 @@ namespace KpopZtation.View.ArtistFolder
         protected global::System.Web.UI.WebControls.Label pageLbl;
 
         /// <summary>
-        /// artistNameLbl control.
+        /// nameLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label artistNameLbl;
+        protected global::System.Web.UI.WebControls.Label nameLbl;
 
         /// <summary>
         /// nameTbx control.
@@ -42,31 +42,85 @@ namespace KpopZtation.View.ArtistFolder
         protected global::System.Web.UI.WebControls.TextBox nameTbx;
 
         /// <summary>
-        /// artistImage control.
+        /// descLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image artistImage;
+        protected global::System.Web.UI.WebControls.Label descLbl;
 
         /// <summary>
-        /// artistImageLbl control.
+        /// descTbx control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label artistImageLbl;
+        protected global::System.Web.UI.WebControls.TextBox descTbx;
 
         /// <summary>
-        /// imageUpload control.
+        /// priceLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload imageUpload;
+        protected global::System.Web.UI.WebControls.Label priceLbl;
+
+        /// <summary>
+        /// priceTbx control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox priceTbx;
+
+        /// <summary>
+        /// stockLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label stockLbl;
+
+        /// <summary>
+        /// stockTbx control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox stockTbx;
+
+        /// <summary>
+        /// albumImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image albumImage;
+
+        /// <summary>
+        /// albumImageLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label albumImageLbl;
+
+        /// <summary>
+        /// imgUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload imgUpload;
 
         /// <summary>
         /// imageErrorLbl control.
