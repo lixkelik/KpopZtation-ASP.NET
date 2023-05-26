@@ -18,7 +18,7 @@ namespace KpopZtation.View.ArtistFolder
 
         protected void Page_PreInit(object sender, EventArgs e)
         {
-            CustomerRepo custRepo = new CustomerRepo();
+            CustomerController custController = new CustomerController();
 
             if (Session["user"] == null && Request.Cookies["user_cookie"] == null)
             {
@@ -30,7 +30,7 @@ namespace KpopZtation.View.ArtistFolder
                 if (Session["user"] == null)
                 {
                     int id = int.Parse(Request.Cookies["user_cookie"].Value);
-                    cust = custRepo.GetCustomerById(id);
+                    cust = custController.GetCustomerById(id);
                     Session["user"] = cust;
                 }
                 else

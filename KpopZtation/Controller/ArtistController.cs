@@ -1,4 +1,5 @@
 ﻿using KpopZtation.Handler;
+using KpopZtation.Model;
 using KpopZtation.Repository;
 using System;
 using System.Collections.Generic;
@@ -39,5 +40,20 @@ namespace KpopZtation.Controller
             else if (response == "duplicate") return "Artist name duplicated! Input unique name!";
             else return "Failed, please try again!";
         }
+        public Artist GetArtistById(int id)
+        {
+            return artistHandler.GetArtistById(id);
+        }
+
+        public List<Artist> GetAllArtist()
+        {
+            return artistHandler.GetAllArtist();
+        }
+
+        public void DeleteArtist(int id)
+        {
+            artistHandler.DeleteArtist(id);
+        }
+
     }
 }

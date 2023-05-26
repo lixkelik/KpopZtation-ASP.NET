@@ -42,6 +42,19 @@ namespace KpopZtation.Repository
             
         }
 
+        public int UpdateUser(int custId, String name, String email, String gender, String address, String password)
+        {
+            Customer cust = GetCustomerById(custId);
+
+            cust.CustomerName = name;
+            cust.CustomerEmail = email;
+            cust.CustomerGender = gender;
+            cust.CustomerAddress = address;
+            cust.CustomerPassword = password;
+
+            return db.SaveChanges();
+        }
+
 
     }
 }

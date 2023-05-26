@@ -13,9 +13,8 @@ namespace KpopZtation.View.ArtistFolder
 {
     public partial class detail_artist : System.Web.UI.Page
     {
-        AlbumHandler albumHandler = new AlbumHandler();
         AlbumController albumController = new AlbumController();
-        ArtistHandler artistHandler = new ArtistHandler();
+        ArtistController artistController = new ArtistController();
 
         Customer cust;
         Artist artist;
@@ -23,7 +22,7 @@ namespace KpopZtation.View.ArtistFolder
 
         protected void Page_PreInit(object sender, EventArgs e)
         {
-            CustomerRepo custRepo = new CustomerRepo();
+            CustomerController custController = new CustomerController();
 
             if (Session["user"] == null && Request.Cookies["user_cookie"] == null)
             {
@@ -35,7 +34,7 @@ namespace KpopZtation.View.ArtistFolder
                 if (Session["user"] == null)
                 {
                     int id = int.Parse(Request.Cookies["user_cookie"].Value);
-                    cust = custRepo.GetCustomerById(id);
+                    cust = custController.GetCustomerById(id);
                     Session["user"] = cust;
                 }
                 else
@@ -68,7 +67,7 @@ namespace KpopZtation.View.ArtistFolder
                 
 
                 
-                artist = artistHandler.GetArtistById(artistId);
+                artist = artistController.GetArtistById(artistId);
 
                 artistImg.ImageUrl = artist.ArtistImage;
                 artistName.Text = $"Artist name: {artist.ArtistName}";
@@ -80,7 +79,7 @@ namespace KpopZtation.View.ArtistFolder
 
         void DataRebinding()
         {
-            List<Album> artistAlbum = albumHandler.GetAllArtistAlbum(artistId);
+            List<Album> artistAlbum = albumController.GetAllArtistAlbum(artistId);
             albumGrid.DataSource = artistAlbum;
             albumGrid.DataBind();
         }
@@ -120,6 +119,14 @@ namespace KpopZtation.View.ArtistFolder
             int id = int.Parse(row.Cells[1].Text);
             artistId = int.Parse(Request["ID"]);
             Response.Redirect("~/View/AlbumFolder/edit_album.aspx?ID=" + id+"&artistID="+artistId);
+        }
+
+        protected void albumGrid_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridViewRow row = albumGrid.SelectedRow;
+
+            int id = int.Parse(row.Cells[1].Text);
+            Response.Redirect("~/View/AlbumFolder/detail_album.aspx?ID=" + id);
         }
     }
 }

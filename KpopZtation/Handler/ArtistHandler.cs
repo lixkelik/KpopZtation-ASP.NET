@@ -56,7 +56,6 @@ namespace KpopZtation.Handler
         public Artist GetArtistById(int id)
         {
             return artRepo.FindArtistById(id);
-
         }
 
         public List<Artist> GetAllArtist()

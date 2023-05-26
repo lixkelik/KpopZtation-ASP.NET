@@ -13,14 +13,14 @@ namespace KpopZtation.View
 {
     public partial class home : System.Web.UI.Page
     {
-        ArtistHandler artistHandler = new ArtistHandler();
-        CustomerRepo custRepo = new CustomerRepo();
+        ArtistController artistController = new ArtistController();
+        CustomerController custController = new CustomerController();
         Customer cust;
         protected void Page_PreInit(object sender, EventArgs e)
         {
             if (Session["user"] == null && Request.Cookies["user_cookie"] == null)
             {
-                MasterPageFile = "~/View/Master/Guest.Master"; ;
+                MasterPageFile = "~/View/Master/Guest.Master";
             }
             else
             {
@@ -28,7 +28,7 @@ namespace KpopZtation.View
                 if (Session["user"] == null)
                 {
                     int id = int.Parse(Request.Cookies["user_cookie"].Value);
-                    cust = custRepo.GetCustomerById(id);
+                    cust = custController.GetCustomerById(id);
                     Session["user"] = cust;
                 }
                 else
@@ -68,7 +68,7 @@ namespace KpopZtation.View
 
         protected void DataRebinding()
         {
-            List<Artist> artist = artistHandler.GetAllArtist();
+            List<Artist> artist = artistController.GetAllArtist();
             artistGridView.DataSource = artist;
             artistGridView.DataBind();
         }
@@ -77,7 +77,7 @@ namespace KpopZtation.View
         {
             GridViewRow row = artistGridView.Rows[e.RowIndex];
             int id = int.Parse(row.Cells[1].Text);
-            artistHandler.DeleteArtist(id);
+            artistController.DeleteArtist(id);
 
             DataRebinding();
         }

@@ -103,14 +103,15 @@
     <Content Include="Assets\Artists\638059450808002463.jfif" />
     <Content Include="Model\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model.Context.cs</LastGenOutput>
       <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model\Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Content Include="View\AlbumFolder\detail_album.aspx" />
     <Content Include="View\AlbumFolder\edit_album.aspx" />
     <Content Include="View\AlbumFolder\insert_album.aspx" />
     <Content Include="View\ArtistFolder\detail_artist.aspx" />
@@ -118,19 +119,32 @@
     <Content Include="View\ArtistFolder\insert_artist.aspx" />
     <Content Include="View\Authentication\Login.aspx" />
     <Content Include="View\Authentication\Register.aspx" />
+    <Content Include="View\cart.aspx" />
     <Content Include="View\home.aspx" />
+    <Content Include="View\transaction.aspx" />
+    <Content Include="View\transaction_report.aspx" />
+    <Content Include="View\update_profile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\AlbumController.cs" />
     <Compile Include="Controller\ArtistController.cs" />
     <Compile Include="Controller\AuthController.cs" />
+    <Compile Include="Controller\CartController.cs" />
+    <Compile Include="Controller\CustomerController.cs" />
     <Compile Include="Controller\FileUploadController.cs" />
+    <Compile Include="Controller\TransactionController.cs" />
     <Compile Include="Factory\AlbumFactory.cs" />
     <Compile Include="Factory\ArtistFactory.cs" />
+    <Compile Include="Factory\CartFactory.cs" />
     <Compile Include="Factory\CustomerFactory.cs" />
+    <Compile Include="Factory\TransactionDetailFactory.cs" />
+    <Compile Include="Factory\TransactionHeaderFactory.cs" />
     <Compile Include="Handler\AlbumHandler.cs" />
     <Compile Include="Handler\ArtistHandler.cs" />
+    <Compile Include="Handler\CartHandler.cs" />
+    <Compile Include="Handler\CustomerHandler.cs" />
+    <Compile Include="Handler\TransactionHandler.cs" />
     <Compile Include="Handler\UserHandler.cs" />
     <Compile Include="Model\Album.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -168,8 +182,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AlbumRepo.cs" />
     <Compile Include="Repository\ArtistRepo.cs" />
+    <Compile Include="Repository\CartRepo.cs" />
     <Compile Include="Repository\CustomerRepo.cs" />
     <Compile Include="Repository\Database.cs" />
+    <Compile Include="Repository\TransactionRepo.cs" />
+    <Compile Include="View\AlbumFolder\detail_album.aspx.cs">
+      <DependentUpon>detail_album.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\AlbumFolder\detail_album.aspx.designer.cs">
+      <DependentUpon>detail_album.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\AlbumFolder\edit_album.aspx.cs">
       <DependentUpon>edit_album.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -219,6 +242,13 @@
     <Compile Include="View\Authentication\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\cart.aspx.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\cart.aspx.designer.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -246,6 +276,27 @@
     </Compile>
     <Compile Include="View\Master\Guest.Master.designer.cs">
       <DependentUpon>Guest.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\transaction.aspx.cs">
+      <DependentUpon>transaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\transaction.aspx.designer.cs">
+      <DependentUpon>transaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\transaction_report.aspx.cs">
+      <DependentUpon>transaction_report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\transaction_report.aspx.designer.cs">
+      <DependentUpon>transaction_report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\update_profile.aspx.cs">
+      <DependentUpon>update_profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\update_profile.aspx.designer.cs">
+      <DependentUpon>update_profile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

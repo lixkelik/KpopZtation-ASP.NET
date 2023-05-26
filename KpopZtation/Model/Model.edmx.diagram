@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ef59e566d3ea4a919e7d9870492db2ad" Name="Diagram1">
+      <Diagram DiagramId="1cd43b6ec5a54306a7d9d528e85d504a" Name="Diagram1">
         <EntityTypeShape EntityType="DatabaseModel.Album" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.Artist" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.Cart" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />

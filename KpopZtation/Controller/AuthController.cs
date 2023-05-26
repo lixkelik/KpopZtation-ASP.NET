@@ -91,5 +91,18 @@ namespace KpopZtation.Controller
 
             return response;
         }
+
+        public String CheckUpdate(int custId, String name, String email, String gender, String address, String password)
+        {
+            String response = CheckName(name);
+            if (response == "") response = CheckEmail(email);
+            if (response == "") response = CheckGender(gender);
+            if (response == "") response = CheckAddress(address);
+            if (response == "") response = CheckPassword(password);
+            if (response == "") response = CheckAlphaNumeric(password);
+            if (response == "") return userHandler.DoUpdate(custId, name, email, gender, address, password);
+
+            return response;
+        }
     }
 }

@@ -19,7 +19,7 @@
         <asp:Label ID="albumLbl" runat="server" Text="Artist released album: " BorderWidth="2px" Font-Size="16pt"></asp:Label>
     </div>
     <div>
-        <asp:GridView ID="albumGrid" runat="server" AutoGenerateColumns="False" OnRowDataBound="albumGrid_RowDataBound" CellPadding="3" CellSpacing="2" OnRowDeleting="albumGrid_RowDeleting" OnRowEditing="albumGrid_RowEditing">
+        <asp:GridView ID="albumGrid" runat="server" AutoGenerateColumns="False" OnRowDataBound="albumGrid_RowDataBound" CellPadding="3" CellSpacing="2" OnRowDeleting="albumGrid_RowDeleting" OnRowEditing="albumGrid_RowEditing" OnSelectedIndexChanged="albumGrid_SelectedIndexChanged">
             <Columns>
                 <asp:ImageField DataImageUrlField="AlbumImage" HeaderText="Image">
                     <ControlStyle Height="120px" Width="120px" />

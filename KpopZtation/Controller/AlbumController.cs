@@ -1,4 +1,5 @@
 ﻿using KpopZtation.Handler;
+using KpopZtation.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -113,5 +114,16 @@ namespace KpopZtation.Controller
             return "Artist Deleted!";
 
         }
+
+        public List<Album> GetAllArtistAlbum(int artistId)
+        {
+            return albumHandler.GetAllArtistAlbum(artistId);
+        }
+
+        public Album GetAlbumById(int albumId)
+        {
+            return albumHandler.GetAlbumById(albumId);
+        }
+
     }
 }

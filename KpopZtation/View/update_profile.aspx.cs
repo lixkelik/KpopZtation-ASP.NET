@@ -1,6 +1,5 @@
 ﻿using KpopZtation.Controller;
 using KpopZtation.Model;
-using KpopZtation.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,23 +7,21 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace KpopZtation.View.Authentication
+namespace KpopZtation.View
 {
-    public partial class Register : System.Web.UI.Page
+    public partial class update_profile : System.Web.UI.Page
     {
+        CustomerController custController = new CustomerController();
         AuthController authController = new AuthController();
-
+        Customer cust;
         protected void Page_PreInit(object sender, EventArgs e)
         {
-            CustomerController custController = new CustomerController();
-
             if (Session["user"] == null && Request.Cookies["user_cookie"] == null)
             {
-                MasterPageFile = "~/View/Master/Guest.Master"; ;
+                Response.Redirect("~/View/home.aspx");
             }
             else
             {
-                Customer cust;
                 if (Session["user"] == null)
                 {
                     int id = int.Parse(Request.Cookies["user_cookie"].Value);
@@ -36,37 +33,42 @@ namespace KpopZtation.View.Authentication
                     cust = (Customer)Session["user"];
                 }
 
-                if (cust.CustomerRole == "admin") MasterPageFile = "~/View/Master/Admin.Master";
+                if (cust.CustomerRole == "admin")
+                {
+                    Response.Redirect("~/View/home.aspx");
+                }
                 else MasterPageFile = "~/View/Master/Customer.Master";
-
-                Response.Redirect("~/View/home.aspx");
             }
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                nameTbx.Text = cust.CustomerName;
+                emailTbx.Text = cust.CustomerEmail;
+                genderList.SelectedValue = cust.CustomerGender;
+                addressTbx.Text = cust.CustomerAddress;
+            }
         }
 
-        protected void registerBtn_Click(object sender, EventArgs e)
+        protected void updateBtn_Click(object sender, EventArgs e)
         {
             String name = nameTbx.Text.Trim();
             String email = emailTbx.Text.Trim();
             String gender = genderList.SelectedValue;
-            String address = addresTbx.Text.Trim();
+            String address = addressTbx.Text.Trim();
             String password = passTbx.Text;
 
-            
-            String responseText = authController.CheckRegister(name, email, gender, address, password);
+
+            String responseText = authController.CheckUpdate(cust.CustomerID, name, email, gender, address, password);
             if (responseText == "Registered")
             {
                 errorLbl.Text = "You succesfully registered! Proceed to login";
-                
+
                 Response.Redirect("Login.aspx");
             }
             else errorLbl.Text = responseText;
-
-            
         }
     }
 }
