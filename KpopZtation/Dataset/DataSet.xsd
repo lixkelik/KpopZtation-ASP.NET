@@ -34,7 +34,7 @@
         <xs:element name="Albums" msprop:Generator_TableClassName="AlbumsDataTable" msprop:Generator_TableVarName="tableAlbums" msprop:Generator_RowChangedName="AlbumsRowChanged" msprop:Generator_TablePropName="Albums" msprop:Generator_RowDeletingName="AlbumsRowDeleting" msprop:Generator_RowChangingName="AlbumsRowChanging" msprop:Generator_RowEvHandlerName="AlbumsRowChangeEventHandler" msprop:Generator_RowDeletedName="AlbumsRowDeleted" msprop:Generator_RowClassName="AlbumsRow" msprop:Generator_UserTableName="Albums" msprop:Generator_RowEvArgName="AlbumsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="AlbumID" msprop:Generator_ColumnVarNameInTable="columnAlbumID" msprop:Generator_ColumnPropNameInRow="AlbumID" msprop:Generator_ColumnPropNameInTable="AlbumIDColumn" msprop:Generator_UserColumnName="AlbumID" type="xs:string" minOccurs="0" />
+              <xs:element name="AlbumID" msprop:Generator_ColumnVarNameInTable="columnAlbumID" msprop:Generator_ColumnPropNameInRow="AlbumID" msprop:Generator_ColumnPropNameInTable="AlbumIDColumn" msprop:Generator_UserColumnName="AlbumID" type="xs:string" />
               <xs:element name="ArtistID" msprop:Generator_ColumnVarNameInTable="columnArtistID" msprop:Generator_ColumnPropNameInRow="ArtistID" msprop:Generator_ColumnPropNameInTable="ArtistIDColumn" msprop:Generator_UserColumnName="ArtistID" type="xs:string" minOccurs="0" />
               <xs:element name="AlbumName" msprop:Generator_ColumnVarNameInTable="columnAlbumName" msprop:Generator_ColumnPropNameInRow="AlbumName" msprop:Generator_ColumnPropNameInTable="AlbumNameColumn" msprop:Generator_UserColumnName="AlbumName" type="xs:string" minOccurs="0" />
               <xs:element name="AlbumImage" msprop:Generator_ColumnVarNameInTable="columnAlbumImage" msprop:Generator_ColumnPropNameInRow="AlbumImage" msprop:Generator_ColumnPropNameInTable="AlbumImageColumn" msprop:Generator_UserColumnName="AlbumImage" type="xs:string" minOccurs="0" />
@@ -46,11 +46,15 @@
         </xs:element>
       </xs:choice>
     </xs:complexType>
+    <xs:unique name="AlbumsKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Albums" />
+      <xs:field xpath="mstns:AlbumID" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
       <msdata:Relationship name="TransactionHeaders_TransactionDetails" msdata:parent="TransactionHeaders" msdata:child="TransactionDetails" msdata:parentkey="TransactionID" msdata:childkey="TransactionID" msprop:Generator_UserChildTable="TransactionDetails" msprop:Generator_ChildPropName="GetTransactionDetailsRows" msprop:Generator_UserRelationName="TransactionHeaders_TransactionDetails" msprop:Generator_ParentPropName="TransactionHeadersRow" msprop:Generator_RelationVarName="relationTransactionHeaders_TransactionDetails" msprop:Generator_UserParentTable="TransactionHeaders" />
-      <msdata:Relationship name="Albums_TransactionDetails" msdata:parent="Albums" msdata:child="TransactionDetails" msdata:parentkey="AlbumID" msdata:childkey="AlbumID" msprop:Generator_UserChildTable="TransactionDetails" msprop:Generator_ChildPropName="GetTransactionDetailsRows" msprop:Generator_UserRelationName="Albums_TransactionDetails" msprop:Generator_RelationVarName="relationAlbums_TransactionDetails" msprop:Generator_UserParentTable="Albums" msprop:Generator_ParentPropName="AlbumsRow" />
+      <msdata:Relationship name="Albums_TransactionDetails" msdata:parent="Albums" msdata:child="TransactionDetails" msdata:parentkey="AlbumID" msdata:childkey="AlbumID" msprop:Generator_UserChildTable="TransactionDetails" msprop:Generator_ChildPropName="GetTransactionDetailsRows" msprop:Generator_UserRelationName="Albums_TransactionDetails" msprop:Generator_ParentPropName="AlbumsRow" msprop:Generator_RelationVarName="relationAlbums_TransactionDetails" msprop:Generator_UserParentTable="Albums" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

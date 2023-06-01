@@ -71,17 +71,22 @@ namespace KpopZtation.View
                 foreach (TransactionDetail td in t.TransactionDetails)
                 {
                     var dRow = detailTable.NewRow();
-                    var aRow = albumTable.NewRow();
                     dRow["TransactionID"] = td.TransactionID;
-                    dRow["AlbumID"] = td.Album.AlbumID; // Ensure AlbumID is assigned
+                    dRow["AlbumID"] = td.AlbumID;
                     dRow["Qty"] = td.Qty;
                     detailTable.Rows.Add(dRow);
 
-                    aRow["AlbumID"] = td.Album.AlbumID;
-                    aRow["AlbumName"] = td.Album.AlbumName;
-                    aRow["AlbumPrice"] = td.Album.AlbumPrice;
-                    albumTable.Rows.Add(aRow);
-                    
+                    var aRows = albumTable.Select("AlbumID = " + td.AlbumID);
+                    if (aRows.Length == 0)
+                    {
+                        var aRow = albumTable.NewRow();
+                        aRow["AlbumID"] = td.Album.AlbumID;
+                        aRow["AlbumName"] = td.Album.AlbumName;
+                        aRow["AlbumPrice"] = td.Album.AlbumPrice;
+                        albumTable.Rows.Add(aRow);
+                    }
+
+
                 }
             }
 

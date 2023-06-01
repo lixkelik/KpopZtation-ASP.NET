@@ -1076,6 +1076,13 @@ namespace KpopZtation.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AlbumsRow FindByAlbumID(string AlbumID) {
+                return ((AlbumsRow)(this.Rows.Find(new object[] {
+                            AlbumID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 AlbumsDataTable cln = ((AlbumsDataTable)(base.Clone()));
                 cln.InitVars();
@@ -1117,6 +1124,10 @@ namespace KpopZtation.Dataset {
                 base.Columns.Add(this.columnAlbumStock);
                 this.columnAlbumDescription = new global::System.Data.DataColumn("AlbumDescription", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAlbumDescription);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("AlbumsKey1", new global::System.Data.DataColumn[] {
+                                this.columnAlbumID}, true));
+                this.columnAlbumID.AllowDBNull = false;
+                this.columnAlbumID.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1492,12 +1503,7 @@ namespace KpopZtation.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string AlbumID {
                 get {
-                    try {
-                        return ((string)(this[this.tableAlbums.AlbumIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AlbumID\' in table \'Albums\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableAlbums.AlbumIDColumn]));
                 }
                 set {
                     this[this.tableAlbums.AlbumIDColumn] = value;
@@ -1598,18 +1604,6 @@ namespace KpopZtation.Dataset {
                 set {
                     this[this.tableAlbums.AlbumDescriptionColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsAlbumIDNull() {
-                return this.IsNull(this.tableAlbums.AlbumIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetAlbumIDNull() {
-                this[this.tableAlbums.AlbumIDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
