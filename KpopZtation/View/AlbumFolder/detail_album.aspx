@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Label ID="titleLbl" runat="server" Text="Album Detail" Font-Bold="True"></asp:Label>
     <div>
-        <asp:Image ID="albumImg" runat="server" />
+        <asp:Image ID="albumImg" runat="server" Height="300px" />
     </div>
     <div>
         <asp:Label ID="albumNameLbl" runat="server" Text=""></asp:Label>

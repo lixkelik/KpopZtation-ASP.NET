@@ -20,5 +20,9 @@ namespace KpopZtation.Handler
             return trsRepo.GetCustomerTransaction(custId);
         }
 
+        public List<TransactionHeader> GetAllTransaction()
+        {
+            return trsRepo.GetAllTransaction();
+        }
     }
 }

@@ -39,8 +39,15 @@ namespace KpopZtation.Repository
 
         public List<TransactionHeader> GetCustomerTransaction(int custId)
         {
-            return (from trs in db.TransactionHeaders where trs.CustomerID.Equals(custId) select trs).ToList();
+            return (from trs in db.TransactionHeaders 
+                    where trs.CustomerID.Equals(custId) 
+                    orderby trs.TransactionDate descending 
+                    select trs).ToList();
         }
 
+        public List<TransactionHeader> GetAllTransaction()
+        {
+            return db.TransactionHeaders.ToList();
+        }
     }
 }

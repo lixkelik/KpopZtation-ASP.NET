@@ -15,5 +15,10 @@ namespace KpopZtation.Controller
         {
             return trsHandler.GetCustomerTransaction(custId);
         }
+
+        public List<TransactionHeader> GetAllTransaction()
+        {
+            return trsHandler.GetAllTransaction();
+        }
     }
 }
