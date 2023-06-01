@@ -35,7 +35,7 @@ namespace KpopZtation.View
 
                 if (cust.CustomerRole == "admin")
                 {
-                    Response.Redirect("~/View/home.aspx");
+                    MasterPageFile = "~/View/Master/Admin.Master";
                 }
                 else MasterPageFile = "~/View/Master/Customer.Master";
             }

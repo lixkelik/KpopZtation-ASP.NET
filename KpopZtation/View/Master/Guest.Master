@@ -7,40 +7,127 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .navbar {
+            background-color: darkblue;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-left: 20px;
+        }
+
+        .navbar-logo {
+            font-weight: bold;
+            font-family: 'Poetsen One';
+            font-size: larger;
+            color: white;
+        }
+
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .navbar-menu a {
+            font-weight: bold;
+            font-family: Arial;
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar-menu a:hover {
+            color: yellow;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-right: 20px;
+        }
+
+        .register-button,
+        .login-button {
+            background-color: papayawhip;
+            color: darkblue;
+            font-weight: bold;
+            font-family: Arial;
+            cursor: pointer;
+            padding: 8px 16px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .login-button:hover,
+        .register-button:hover {
+            background-color: lightyellow;
+        }
+        
+        .content {
+            padding: 20px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: darkblue;
+            color: white;
+        }
+
+    </style>
 </head>
-<body style="margin: 0; padding: 0">
+<body>
     <form id="form1" runat="server">
-        <div>
-            <table style="border-collapse:collapse; width:100%;">
-                <tr style="background-color:darkblue; height:50px">
-                    <td style="width: 70px; text-align:center">
-                        <asp:Label ID="kpopZtation" runat="server" Text="KpopZtation" Font-Bold="True" Font-Names="Poetsen One" Font-Size="Larger" ForeColor="White"></asp:Label>
-                    </td>
-                    <td class="auto-style2">
+        <div class="container">
+            <div class="navbar">
+                <div class="navbar-left">
+                    <asp:Label ID="kpopZtation" runat="server" Text="KpopZtation" CssClass="navbar-logo"></asp:Label>
+                    <div class="navbar-menu">
                         <asp:Menu ID="Menu1" runat="server" Font-Bold="True" Font-Names="Arial" ForeColor="White" Orientation="Horizontal">
                             <Items>
                                 <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/View/home.aspx"></asp:MenuItem>
                             </Items>
                             <StaticHoverStyle ForeColor="Yellow" />
                         </asp:Menu>
-                    </td>
-                    <td style="text-align:right; width:60%; padding-right:30px">
-                        <asp:Button ID="registerBtn" runat="server" Text="Register" BorderStyle="None" Font-Bold="True" Font-Names="Arial" BackColor="DarkBlue" ForeColor="White" OnClick="registerBtn_Click"/>
-                        <asp:Button ID="loginBtn" runat="server" Text="Login" BorderStyle="None" Font-Bold="True" Font-Names="Arial" BackColor="DarkBlue" ForeColor="White" OnClick="loginBtn_Click"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3">
-                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                        </asp:ContentPlaceHolder>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3">
-                        &copy; 2023 - KpopZtation
-                    </td>
-                </tr>
-            </table>
+                    </div>
+                </div>
+                <div class="navbar-right">
+                    <asp:Button ID="registerBtn" runat="server" Text="Register" CssClass="register-button" OnClick="registerBtn_Click" />
+                    <asp:Button ID="loginBtn" runat="server" Text="Login" CssClass="login-button" OnClick="loginBtn_Click" />
+                </div>
+            </div>
+
+            <div class="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <div class="footer">
+                &copy; 2023 - KpopZtation
+            </div>
         </div>
     </form>
 </body>
