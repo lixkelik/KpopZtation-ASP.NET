@@ -15,24 +15,6 @@ namespace KpopZtation.View.ArtistFolder
     {
 
         /// <summary>
-        /// pageLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label pageLbl;
-
-        /// <summary>
-        /// artistNameLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label artistNameLbl;
-
-        /// <summary>
         /// nameTbx control.
         /// </summary>
         /// <remarks>
@@ -49,15 +31,6 @@ namespace KpopZtation.View.ArtistFolder
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image artistImage;
-
-        /// <summary>
-        /// artistImageLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label artistImageLbl;
 
         /// <summary>
         /// imageUpload control.

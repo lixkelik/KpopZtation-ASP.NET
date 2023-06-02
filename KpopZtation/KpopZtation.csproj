@@ -1245,6 +1245,9 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Content Include="View\StyleCSS\authorizedNavBarStyle.css" />
+    <Content Include="View\StyleCSS\guestNavBarStyle.css" />
+    <Content Include="View\StyleCSS\homeStyle.css" />
     <Content Include="View\AlbumFolder\detail_album.aspx" />
     <Content Include="View\AlbumFolder\edit_album.aspx" />
     <Content Include="View\AlbumFolder\insert_album.aspx" />

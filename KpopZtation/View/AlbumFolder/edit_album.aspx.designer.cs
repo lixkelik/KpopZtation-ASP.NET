@@ -15,24 +15,6 @@ namespace KpopZtation.View.AlbumFolder
     {
 
         /// <summary>
-        /// pageLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label pageLbl;
-
-        /// <summary>
-        /// nameLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nameLbl;
-
-        /// <summary>
         /// nameTbx control.
         /// </summary>
         /// <remarks>
@@ -40,15 +22,6 @@ namespace KpopZtation.View.AlbumFolder
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox nameTbx;
-
-        /// <summary>
-        /// descLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label descLbl;
 
         /// <summary>
         /// descTbx control.
@@ -60,15 +33,6 @@ namespace KpopZtation.View.AlbumFolder
         protected global::System.Web.UI.WebControls.TextBox descTbx;
 
         /// <summary>
-        /// priceLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label priceLbl;
-
-        /// <summary>
         /// priceTbx control.
         /// </summary>
         /// <remarks>
@@ -76,15 +40,6 @@ namespace KpopZtation.View.AlbumFolder
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox priceTbx;
-
-        /// <summary>
-        /// stockLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label stockLbl;
 
         /// <summary>
         /// stockTbx control.
@@ -105,15 +60,6 @@ namespace KpopZtation.View.AlbumFolder
         protected global::System.Web.UI.WebControls.Image albumImage;
 
         /// <summary>
-        /// albumImageLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label albumImageLbl;
-
-        /// <summary>
         /// imgUpload control.
         /// </summary>
         /// <remarks>
@@ -121,15 +67,6 @@ namespace KpopZtation.View.AlbumFolder
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload imgUpload;
-
-        /// <summary>
-        /// imageErrorLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label imageErrorLbl;
 
         /// <summary>
         /// updateBtn control.

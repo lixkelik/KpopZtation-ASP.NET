@@ -80,6 +80,10 @@ namespace KpopZtation.View.ArtistFolder
         void DataRebinding()
         {
             List<Album> artistAlbum = albumController.GetAllArtistAlbum(artistId);
+            if (artistAlbum.Count == 0)
+            {
+                isEmptyLbl.Visible = true;
+            }
             albumGrid.DataSource = artistAlbum;
             albumGrid.DataBind();
         }

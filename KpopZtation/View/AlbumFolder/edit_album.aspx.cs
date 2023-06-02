@@ -83,6 +83,7 @@ namespace KpopZtation.View.AlbumFolder
 
             if (response == "")
             {
+
                 int albumId = int.Parse(Request["ID"]);
                 int artistId = int.Parse(Request["artistID"]);
                 
@@ -94,10 +95,15 @@ namespace KpopZtation.View.AlbumFolder
                 response = albumController.CheckUpdateAlbum(albumId, name, desc, price, stock, imageUrl);
 
                 if (response == "success") Response.Redirect("~/View/ArtistFolder/detail_artist.aspx?ID=" + artistId);
-                else errorLbl.Text = response;
+                else
+                {
+                    errorLbl.Visible = true;
+                    errorLbl.Text = response;
+                }
             }
             else
             {
+                errorLbl.Visible = true;
                 errorLbl.Text = response;
             }
         }

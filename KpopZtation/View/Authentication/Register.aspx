@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Master/Guest.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="KpopZtation.View.Authentication.Register" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
-        /* Custom CSS styles */
         body {
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
@@ -51,7 +50,6 @@
             background-color: #007bff;
             color: #fff;
             font-size: 16px;
-            text-transform: uppercase;
             cursor: pointer;
             margin: 0 auto;
         }
@@ -65,18 +63,36 @@
             margin-top: 10px;
             font-size: 14px;
             text-align: center;
+            border: 1px solid #cc0000;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #ffdddd;
+            width: 400px;
+            max-width: 100%;
+            height: 40px;
+            box-sizing: border-box;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center; 
         }
 
-        .center-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+        .center-containerUp {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -200px;
+            margin-top: -300px;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="center-container">
+    <div class="center-containerUp">
         <asp:Label ID="register" runat="server" Text="Create your account" Font-Bold="True" Font-Size="XX-Large" Height="70px"></asp:Label>
         <div class="form-group">
             <asp:Label ID="namelbl" runat="server" Text="Name" CssClass="label-top-left"></asp:Label>
@@ -105,7 +121,7 @@
             <asp:Button ID="registerBtn" runat="server" Text="Register" OnClick="registerBtn_Click" CssClass="btn" />
         </div>
         <div>
-            <asp:Label ID="errorLbl" runat="server" CssClass="error-message"></asp:Label>
+            <asp:Label ID="errorLbl" runat="server" CssClass="error-message" Visible ="false"></asp:Label>
         </div>
     </div>
 </asp:Content>

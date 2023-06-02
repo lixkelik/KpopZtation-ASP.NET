@@ -62,6 +62,7 @@ namespace KpopZtation.View
 
 
             String responseText = authController.CheckUpdate(cust.CustomerID, name, email, gender, address, password);
+            errorLbl.Visible = true;
             if (responseText == "Registered")
             {
                 errorLbl.Text = "You succesfully registered! Proceed to login";

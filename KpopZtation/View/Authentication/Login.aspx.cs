@@ -80,6 +80,7 @@ namespace KpopZtation.View
             }
             else
             {
+                errorLbl.Visible = true;
                 errorLbl.Text = customer;
             }
         }

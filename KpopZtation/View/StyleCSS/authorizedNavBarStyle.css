@@ -1,0 +1,74 @@
+﻿body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.containerNav {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: darkblue;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar-logo {
+    font-weight: bold;
+    font-family: 'Poetsen One';
+    font-size: larger;
+    color: white;
+    margin-right: 20px;
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    gap: 20px;
+}
+
+    .navbar-menu a {
+        font-weight: bold;
+        font-family: Arial;
+        color: white;
+        text-decoration: none;
+    }
+
+        .navbar-menu a:hover {
+            color: yellow;
+        }
+
+.logout-button {
+    background-color: papayawhip;
+    color: darkblue;
+    font-weight: bold;
+    font-family: Arial;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 20px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+}
+
+    .logout-button:hover {
+        background-color: lightyellow;
+    }
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: darkblue;
+    color: white;
+}

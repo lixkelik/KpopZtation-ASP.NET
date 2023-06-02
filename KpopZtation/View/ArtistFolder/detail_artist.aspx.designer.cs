@@ -69,6 +69,15 @@ namespace KpopZtation.View.ArtistFolder
         protected global::System.Web.UI.WebControls.Label albumLbl;
 
         /// <summary>
+        /// isEmptyLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label isEmptyLbl;
+
+        /// <summary>
         /// albumGrid control.
         /// </summary>
         /// <remarks>

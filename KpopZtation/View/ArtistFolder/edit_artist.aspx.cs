@@ -67,6 +67,7 @@ namespace KpopZtation.View.ArtistFolder
             string image = artistImage.ImageUrl;
 
             string response = "";
+            errorLbl.Visible = true;
             if (imageUpload.HasFile)
             {
                 string fileExtension = System.IO.Path.GetExtension(imageUpload.FileName);
@@ -93,6 +94,7 @@ namespace KpopZtation.View.ArtistFolder
             }
             else
             {
+                imageErrorLbl.Visible = true;
                 imageErrorLbl.Text = response;
             }
             

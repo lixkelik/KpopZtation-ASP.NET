@@ -1,10 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Master/Guest.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="KpopZtation.View.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
-        /* Custom CSS styles */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            background-color: #f2f2f2;
         }
 
         h2 {
@@ -18,16 +17,20 @@
             text-align: center;
         }
 
+        .form-groupCbx {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
         .form-control {
-            width: 400px;
-            max-width: 100%;
-            height: 40px;
-            border-radius: 5px;
+            display: flex;
+            width: 100%;
+            padding: 10px;
             border: 1px solid #ccc;
-            padding: 5px 10px;
+            border-radius: 5px;
             font-size: 16px;
+            margin-bottom: 20px;
             box-sizing: border-box;
-            margin: 0 auto;
         }
 
         .form-control:focus {
@@ -61,7 +64,6 @@
             background-color: #007bff;
             color: #fff;
             font-size: 16px;
-            text-transform: uppercase;
             cursor: pointer;
             margin: 0 auto;
         }
@@ -75,18 +77,37 @@
             margin-top: 10px;
             font-size: 14px;
             text-align: center;
+            border: 1px solid #cc0000;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #ffdddd;
+            width: 400px;
+            max-width: 100%;
+            height: 40px;
+            box-sizing: border-box;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center; 
         }
 
-        .center-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+        .center-containerUp {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -200px;
+            margin-top: -220px;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
         }
+
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="center-container">
+    <div class="center-containerUp">
         <h2>Login</h2>
         <div class="form-group">
             <asp:Label ID="emailLbl" runat="server" Text="Email" CssClass="label-top-left"></asp:Label>
@@ -100,14 +121,15 @@
                 <asp:TextBox ID="passTbx" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-groupCbx">
             <asp:CheckBox ID="rememberMeCbx" runat="server" Text="Remember Me" CssClass="checkbox-label" />
         </div>
         <div class="btn-container">
             <asp:Button ID="loginBtn" runat="server" Text="Login" OnClick="loginBtn_Click" CssClass="btn" />
         </div>
-        <div>
-            <asp:Label ID="errorLbl" runat="server" CssClass="error-message"></asp:Label>
+        <div class="error-container">
+            <asp:Label ID="errorLbl" runat="server" CssClass="error-message" Visible ="false"></asp:Label>
         </div>
+
     </div>
 </asp:Content>

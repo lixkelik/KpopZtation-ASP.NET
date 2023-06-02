@@ -22,7 +22,6 @@ namespace KpopZtation.View
             }
             else
             {
-
                 if (Session["user"] == null)
                 {
                     int id = int.Parse(Request.Cookies["user_cookie"].Value);
@@ -65,6 +64,8 @@ namespace KpopZtation.View
         {
             GridViewRow row = cartGrid.Rows[e.RowIndex];
             int id = int.Parse(row.Cells[1].Text);
+            errorLbl.Visible = true;
+            errorLbl.CssClass = "success-message";
             errorLbl.Text = cartController.DeleteCartItem(id);
 
             DataRebinding();
@@ -72,8 +73,19 @@ namespace KpopZtation.View
 
         protected void checkoutBtn_Click(object sender, EventArgs e)
         {
-            errorLbl.Text = cartController.Checkout(cust.CustomerID);
-            DataRebinding();
+            errorLbl.Visible = true;
+            if (cartGrid.Rows.Count == 0)
+            {
+                errorLbl.CssClass = "error-message";
+                errorLbl.Text = "Your cart is empty!";
+            }
+            else
+            {
+                string response = cartController.Checkout(cust.CustomerID);
+                errorLbl.CssClass = response.Contains("An error occured, please try again later!") ? "error-message" : "success-message";
+                errorLbl.Text = response;
+                DataRebinding();
+            }
         }
     }
 }

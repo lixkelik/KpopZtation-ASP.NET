@@ -58,10 +58,9 @@ namespace KpopZtation.View.Authentication
 
             
             String responseText = authController.CheckRegister(name, email, gender, address, password);
+            errorLbl.Visible = true;
             if (responseText == "Registered")
             {
-                errorLbl.Text = "You succesfully registered! Proceed to login";
-                
                 Response.Redirect("Login.aspx");
             }
             else errorLbl.Text = responseText;

@@ -25,7 +25,7 @@ namespace KpopZtation.Controller
             Match match = regex.Match(email);
             if (match.Success) return "";
 
-            return "invalid email format!";
+            return "Invalid email format!";
         }
 
         public static String CheckPassword(String password)
