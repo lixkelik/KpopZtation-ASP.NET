@@ -1,0 +1,102 @@
+﻿body {
+    font-family: Arial;
+}
+
+.containerUp {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.insert-button-container {
+    text-align: start;
+}
+
+.insert-button {
+    width: 150px;
+    max-width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+    .insert-button:hover {
+        background-color: #0056b3;
+    }
+
+.album-grid {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.album-grid-row {
+    background-color: #f2f2f2;
+}
+
+.album-grid-header {
+    background-color: #333;
+    color: #fff;
+    height: 40px;
+}
+
+.album-grid-selected-row {
+    background-color: #ffd700;
+}
+
+.album-grid .gridview-button {
+    width: 80px;
+    height: 30px;
+    border-radius: 3px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+    .album-grid .gridview-button:hover {
+        background-color: #0056b3;
+    }
+
+
+.page-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.artist-image,
+.artist-name {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+    .artist-image img {
+        border-radius: 10%;
+    }
+
+.album-label {
+    text-align: start;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    text-align: center;
+}
+
+.empty-message {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #888;
+}
+
+.Hide {
+    display: none;
+}

@@ -1246,6 +1246,9 @@
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
     <Content Include="View\StyleCSS\authorizedNavBarStyle.css" />
+    <Content Include="View\StyleCSS\cartStyle.css" />
+    <Content Include="View\StyleCSS\detailArtistStyle.css" />
+    <Content Include="View\StyleCSS\editArtistStyle.css" />
     <Content Include="View\StyleCSS\guestNavBarStyle.css" />
     <Content Include="View\StyleCSS\homeStyle.css" />
     <Content Include="View\AlbumFolder\detail_album.aspx" />
@@ -1258,6 +1261,9 @@
     <Content Include="View\Authentication\Register.aspx" />
     <Content Include="View\cart.aspx" />
     <Content Include="View\home.aspx" />
+    <Content Include="View\StyleCSS\formStyle.css" />
+    <Content Include="View\StyleCSS\insertArtistStyle.css" />
+    <Content Include="View\StyleCSS\transactionStyle.css" />
     <Content Include="View\transaction.aspx" />
     <Content Include="View\transaction_report.aspx" />
     <Content Include="View\update_profile.aspx" />

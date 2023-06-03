@@ -1,63 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Master/Customer.Master" AutoEventWireup="true" CodeBehind="transaction.aspx.cs" Inherits="KpopZtation.View.transaction" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style>
-
-        body{
-            font-family: Arial;
-            background-color: #f5f5f5;
-        }
-
-        .transaction-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .transaction-grid {
-            width: 100%;
-            text-align: center;
-            margin: 0 auto;
-            border-collapse: collapse;
-            background-color: #fff;
-        }
-
-        .transaction-grid th,
-        .transaction-grid td {
-            padding: 10px;
-            text-align: center;
-            vertical-align: middle;
-            border: 1px solid #000;
-        }
-
-        .transaction-detail-grid {
-            width: 100%;
-            text-align: center;
-            margin: 0 auto;
-            border-collapse: collapse;
-            background-color: #fff;
-        }
-
-        .transaction-detail-grid th,
-        .transaction-detail-grid td {
-            padding: 10px;
-            text-align: center;
-            vertical-align: middle;
-            border: 1px solid #ccc;
-        }
-
-        .containerUp {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .album-image {
-            height: 100px;
-            width: 100px;
-            border-radius: 5px;
-        }
-
-    </style>
+    <link rel="stylesheet" href="StyleCSS/transactionStyle.css" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
