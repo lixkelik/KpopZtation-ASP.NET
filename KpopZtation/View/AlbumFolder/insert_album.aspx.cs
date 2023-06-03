@@ -48,9 +48,9 @@ namespace KpopZtation.View.AlbumFolder
 
         protected void insertBtn_Click(object sender, EventArgs e)
         {
+            errorLbl.Visible = true;
             if (string.IsNullOrEmpty(priceTbx.Text) || string.IsNullOrEmpty(stockTbx.Text))
             {
-                
                 errorLbl.Text = "Please enter a value";
             }
             string name = nameTbx.Text.Trim();
@@ -71,7 +71,13 @@ namespace KpopZtation.View.AlbumFolder
 
             if (response == "")
             {
+                if(Request["ID"] == null)
+                {
+                    Response.Redirect("~/View/home.aspx");
+                }
+
                 int artistId = int.Parse(Request["ID"]);
+                
                 if (imgUpload.HasFile)
                 {
                     imgUpload.SaveAs(Server.MapPath("~/Assets/Albums/" + imgUpload.FileName));

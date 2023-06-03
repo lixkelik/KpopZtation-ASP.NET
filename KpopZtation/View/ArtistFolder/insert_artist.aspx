@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Master/Admin.Master" AutoEventWireup="true" CodeBehind="insert_artist.aspx.cs" Inherits="KpopZtation.View.ArtistFolder.insert_artist" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="../StyleCSS/insertArtistStyle.css" />
+    <link rel="stylesheet" href="../StyleCSS/insertStyle.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="center-containerIns">
