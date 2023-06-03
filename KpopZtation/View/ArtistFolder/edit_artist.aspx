@@ -7,6 +7,9 @@
     <div class="containerEdit">
         <h2 class="labelTitle">Update Artist Data</h2>
         <div>
+            <asp:Label ID="artistNameLbl" runat="server" Text="" Visible="false"></asp:Label>
+        </div>
+        <div>
             <label class="label" for="nameTbx">Artist Name</label>
             <asp:TextBox ID="nameTbx" runat="server" CssClass="input"></asp:TextBox>
         </div>

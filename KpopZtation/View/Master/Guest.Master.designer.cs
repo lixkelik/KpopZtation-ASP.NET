@@ -51,22 +51,13 @@ namespace KpopZtation.View.Master
         protected global::System.Web.UI.WebControls.Menu Menu1;
 
         /// <summary>
-        /// registerBtn control.
+        /// Menu2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button registerBtn;
-
-        /// <summary>
-        /// loginBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button loginBtn;
+        protected global::System.Web.UI.WebControls.Menu Menu2;
 
         /// <summary>
         /// ContentPlaceHolder1 control.

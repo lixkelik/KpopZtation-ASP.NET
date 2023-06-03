@@ -42,13 +42,13 @@ namespace KpopZtation.View.Master
         protected global::System.Web.UI.WebControls.Label kpopZtation;
 
         /// <summary>
-        /// logoutBtn control.
+        /// logOut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button logoutBtn;
+        protected global::System.Web.UI.WebControls.LinkButton logOut;
 
         /// <summary>
         /// ContentPlaceHolder1 control.

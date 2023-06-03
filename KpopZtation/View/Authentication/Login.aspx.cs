@@ -48,7 +48,7 @@ namespace KpopZtation.View
 
         }
 
-        protected void loginBtn_Click(object sender, EventArgs e)
+        protected void loginPageBtn_Click(object sender, EventArgs e)
         {
             //To check what is the data type returned by the auth controller as it is dynamic.
             dynamic customer = authController.CheckLogin(emailTbx.Text, passTbx.Text);

@@ -49,10 +49,10 @@
             color: yellow;
         }
 
-.navbar-right {
-    display: flex;
+.navbar-right{
+    border-collapse: separate;
+    border-spacing: 2px;
     align-items: center;
-    gap: 10px;
     margin-right: 20px;
 }
 

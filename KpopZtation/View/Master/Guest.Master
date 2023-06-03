@@ -24,8 +24,14 @@
                     </div>
                 </div>
                 <div class="navbar-right">
-                    <asp:Button ID="registerBtn" runat="server" Text="Register" CssClass="register-button" OnClick="registerBtn_Click" />
-                    <asp:Button ID="loginBtn" runat="server" Text="Login" CssClass="login-button" OnClick="loginBtn_Click" />
+                    <asp:Menu ID="Menu2" runat="server" Font-Bold="True" Font-Names="Arial" ForeColor="White" Orientation="Horizontal">
+                        <Items>
+                            <asp:MenuItem Text="Login" Value="Login" NavigateUrl="~/View/Authentication/Login.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Register" Value="Register" NavigateUrl="~/View/Authentication/Register.aspx"></asp:MenuItem>
+                        </Items>
+                        <StaticHoverStyle ForeColor="Yellow" />
+                        <staticmenuitemstyle BorderWidth="10px" BorderColor="Transparent"/>
+                    </asp:Menu>
                 </div>
             </div>
 

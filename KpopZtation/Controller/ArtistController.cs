@@ -12,14 +12,14 @@ namespace KpopZtation.Controller
     {
         ArtistHandler artistHandler = new ArtistHandler();
 
-        public String CheckUpdateArtist(int id, string name, string imageUrl)
+        public String CheckUpdateArtist(int id, string newName, string oldName, string imageUrl)
         {
-            if(name == null || name == "")
+            if(newName == null || newName == "")
             {
                 return "Artist name must be filled!";
             }
 
-            string response = artistHandler.UpdateArtist(id, name, imageUrl);
+            string response = artistHandler.UpdateArtist(id, newName, oldName, imageUrl);
 
             return CheckReturnString(response);
 

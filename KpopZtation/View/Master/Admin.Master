@@ -19,7 +19,7 @@
                     <asp:HyperLink runat="server" NavigateUrl="~/View/update_profile.aspx" Text="Update Profile"></asp:HyperLink>
                 </div>
                 <div>
-                    <asp:Button ID="logoutBtn" runat="server" Text="Logout" CssClass="logout-button" OnClick="logoutBtn_Click" />
+                    <asp:LinkButton ID="logOut" runat="server" OnClick="logOut_Click" CssClass="logout-button" style="text-decoration: none !important;">Logout</asp:LinkButton>
                 </div>
             </div>
 

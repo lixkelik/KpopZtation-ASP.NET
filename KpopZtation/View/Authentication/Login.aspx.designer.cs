@@ -60,13 +60,13 @@ namespace KpopZtation.View
         protected global::System.Web.UI.WebControls.CheckBox rememberMeCbx;
 
         /// <summary>
-        /// loginBtn control.
+        /// loginPageBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button loginBtn;
+        protected global::System.Web.UI.WebControls.Button loginPageBtn;
 
         /// <summary>
         /// errorLbl control.

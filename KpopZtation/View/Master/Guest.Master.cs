@@ -14,12 +14,12 @@ namespace KpopZtation.View.Master
 
         }
 
-        protected void registerBtn_Click(object sender, EventArgs e)
+        protected void registerBtnNav_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/View/Authentication/Register.aspx");
         }
 
-        protected void loginBtn_Click(object sender, EventArgs e)
+        protected void loginBtnNav_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/View/Authentication/Login.aspx");
         }

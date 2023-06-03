@@ -21,7 +21,7 @@
             <asp:CheckBox ID="rememberMeCbx" runat="server" Text="Remember Me" CssClass="checkbox-label" />
         </div>
         <div class="btn-container">
-            <asp:Button ID="loginBtn" runat="server" Text="Login" OnClick="loginBtn_Click" CssClass="btn" />
+            <asp:Button ID="loginPageBtn" runat="server" Text="Login" OnClick="loginPageBtn_Click" CssClass="btn" />
         </div>
         <div class="error-container">
             <asp:Label ID="errorLbl" runat="server" CssClass="error-message" Visible ="false"></asp:Label>

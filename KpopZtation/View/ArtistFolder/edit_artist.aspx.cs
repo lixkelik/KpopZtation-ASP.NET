@@ -13,8 +13,8 @@ namespace KpopZtation.View.ArtistFolder
 {
     public partial class edit_artist : System.Web.UI.Page
     {
-        ArtistController artistController = new ArtistController();
-        FileUploadController fileController = new FileUploadController();
+        private ArtistController artistController = new ArtistController();
+        private FileUploadController fileController = new FileUploadController();
 
         protected void Page_PreInit(object sender, EventArgs e)
         {
@@ -55,6 +55,7 @@ namespace KpopZtation.View.ArtistFolder
             {
                 Artist artist = artistHandler.GetArtistById(id);
 
+                artistNameLbl.Text = artist.ArtistName;
                 nameTbx.Text = artist.ArtistName;
                 artistImage.ImageUrl = artist.ArtistImage;
             }
@@ -63,7 +64,7 @@ namespace KpopZtation.View.ArtistFolder
         protected void updateBtn_Click(object sender, EventArgs e)
         {
             int id = int.Parse(Request["ID"]);
-            string name = nameTbx.Text.Trim();
+            string newName = nameTbx.Text.Trim();
             string image = artistImage.ImageUrl;
 
             string response = "";
@@ -86,7 +87,7 @@ namespace KpopZtation.View.ArtistFolder
                     artistImage.ImageUrl = image;
                 }
 
-                response = artistController.CheckUpdateArtist(id, name, image);
+                response = artistController.CheckUpdateArtist(id, newName, artistNameLbl.Text, image);
 
                 if (response == "success") Response.Redirect("~/View/home.aspx");
                 else errorLbl.Text = response;

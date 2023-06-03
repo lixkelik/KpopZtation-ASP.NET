@@ -29,19 +29,25 @@ namespace KpopZtation.Handler
             artRepo.DeleteArtist(id);
         }
 
-        public String UpdateArtist(int artistId, String artistName, String imageUrl )
+        public string UpdateArtist(int artistId, string newName, string oldName, string imageUrl )
         {
-            Artist artist = artRepo.FindArtistByName(artistName);
+            Artist artist = artRepo.FindArtistByName(newName);
 
-            if (artist != null) return "duplicate";
+            if (artist != null)
+            {
+                if(oldName != newName)
+                {
+                    return "duplicate";
+                }
+            }
 
             // status > 0 == success, status == 0 failed
-            int status = artRepo.UpdateArtist(artistId, artistName, imageUrl);
+            int status = artRepo.UpdateArtist(artistId, newName, imageUrl);
             if (status > 0) return "success";
             else return "failed";
         }
 
-        public String InsertArtist(string artistName, string imageUrl)
+        public string InsertArtist(string artistName, string imageUrl)
         {
             Artist artist = artRepo.FindArtistByName(artistName);
 

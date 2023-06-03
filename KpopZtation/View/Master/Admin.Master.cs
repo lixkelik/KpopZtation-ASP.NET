@@ -14,7 +14,7 @@ namespace KpopZtation.View.Master
 
         }
 
-        protected void logoutBtn_Click(object sender, EventArgs e)
+        protected void logOut_Click(object sender, EventArgs e)
         {
             string[] cookies = Request.Cookies.AllKeys;
 

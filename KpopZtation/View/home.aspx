@@ -21,13 +21,21 @@
                 <Columns>
                     <asp:TemplateField HeaderText="Artist Picture">
                         <ItemTemplate>
-                            <asp:Image ID="artistImage" runat="server" ImageUrl='<%# Eval("ArtistImage") %>' CssClass="artist-image" />
+                            <asp:Image ID="artistImage" runat="server" ImageUrl='<%# Eval("ArtistImage") %>' CssClass="artist-image" Height="100px" Width="100px" />
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:BoundField DataField="ArtistID" HeaderText="ArtistID" HeaderStyle-CssClass="Hide" ItemStyle-CssClass="Hide" />
+                    <asp:BoundField DataField="ArtistID" HeaderText="ArtistID" HeaderStyle-CssClass="Hide" ItemStyle-CssClass="Hide" >
+<HeaderStyle CssClass="Hide"></HeaderStyle>
+
+<ItemStyle CssClass="Hide"></ItemStyle>
+                    </asp:BoundField>
                     <asp:BoundField DataField="ArtistName" HeaderText="Artist Name" />
-                    <asp:CommandField ButtonType="Button" SelectText="View Artist" ShowSelectButton="True" ControlStyle-CssClass="btn" />
-                    <asp:CommandField ButtonType="Button" HeaderText="Admin Control" ShowCancelButton="False" ShowDeleteButton="True" ShowEditButton="True" ShowHeader="True" ControlStyle-CssClass="btn" />
+                    <asp:CommandField ButtonType="Button" SelectText="View Artist" ShowSelectButton="True" ControlStyle-CssClass="btn" >
+<ControlStyle CssClass="btn"></ControlStyle>
+                    </asp:CommandField>
+                    <asp:CommandField ButtonType="Button" HeaderText="Admin Control" ShowCancelButton="False" ShowDeleteButton="True" ShowEditButton="True" ShowHeader="True" ControlStyle-CssClass="btn" >
+<ControlStyle CssClass="btn"></ControlStyle>
+                    </asp:CommandField>
                 </Columns>
                 <HeaderStyle CssClass="artist-grid-header" />
             </asp:GridView>
